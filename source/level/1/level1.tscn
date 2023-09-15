@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://node/01node/node.tscn" type="PackedScene" id=1]
+[ext_resource path="res://node/Transitions/Transition.tscn" type="PackedScene" id=2]
+[ext_resource path="res://node/level_base/level_base.tscn" type="PackedScene" id=3]
+[ext_resource path="res://node/target/Target.tscn" type="PackedScene" id=4]
+[ext_resource path="res://node/start_end/star_end.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level/1/Target1.png" type="Texture" id=6]
+[ext_resource path="res://level/1/Target2.png" type="Texture" id=7]
+[ext_resource path="res://level/1/Target3.png" type="Texture" id=8]
+[ext_resource path="res://node/target/Target.gd" type="Script" id=9]
+[ext_resource path="res://level/fin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://level/1/level1.gd" type="Script" id=11]
+
+[node name="level1" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="level_base" parent="." instance=ExtResource( 3 )]
+tool_num = 0
+level = 1
+
+[node name="node" parent="." instance=ExtResource( 1 )]
+position = Vector2( 416, 384 )
+can_mouse = true
+num = 1
+
+[node name="node2" parent="node" instance=ExtResource( 1 )]
+position = Vector2( 384, -256 )
+can_mouse = true
+num = 2
+
+[node name="node3" parent="node" instance=ExtResource( 1 )]
+position = Vector2( 320, 64 )
+can_mouse = true
+num = 3
+
+[node name="Target" parent="." instance=ExtResource( 4 )]
+script = ExtResource( 9 )
+
+[node name="Target1" type="Sprite" parent="Target"]
+position = Vector2( 64, 64 )
+texture = ExtResource( 6 )
+
+[node name="fin" parent="Target/Target1" instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 48, 0 )
+
+[node name="Target2" type="Sprite" parent="Target"]
+position = Vector2( 64, 96 )
+texture = ExtResource( 7 )
+
+[node name="fin" parent="Target/Target2" instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 48, 0 )
+
+[node name="Target3" type="Sprite" parent="Target"]
+position = Vector2( 64, 128 )
+texture = ExtResource( 8 )
+
+[node name="fin" parent="Target/Target3" instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 48, 0 )
+
+[node name="star_end" parent="." instance=ExtResource( 5 )]
+position = Vector2( 384, 480 )
+
+[node name="star_end2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 768, 96 )
+rotation = 1.5708
+
+[node name="star_end3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 832, 544 )
+flip_h = true
+
+[node name="Transition" parent="." instance=ExtResource( 2 )]
+string = "【二进制】"
+string2 = "\"有三个球，想被点击\""
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 128.0
+margin_right = 1056.0
+margin_bottom = 640.0
+color = Color( 1, 1, 1, 0 )

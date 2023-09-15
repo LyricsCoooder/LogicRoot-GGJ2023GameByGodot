@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://resoure/UI/root/star_end.tres" type="Texture" id=1]
+
+[node name="star_end" type="Sprite"]
+texture = ExtResource( 1 )

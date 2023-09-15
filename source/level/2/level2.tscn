@@ -1,0 +1,132 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://node/level_base/level_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://node/Transitions/Transition.tscn" type="PackedScene" id=2]
+[ext_resource path="res://node/start_end/star_end.tscn" type="PackedScene" id=3]
+[ext_resource path="res://node/01node/node.tscn" type="PackedScene" id=4]
+[ext_resource path="res://node/end/end.tscn" type="PackedScene" id=5]
+[ext_resource path="res://node/tips.tscn" type="PackedScene" id=6]
+[ext_resource path="res://node/arrow.tscn" type="PackedScene" id=7]
+[ext_resource path="res://node/tips001.gd" type="Script" id=8]
+[ext_resource path="res://node/tips2.gd" type="Script" id=9]
+[ext_resource path="res://node/target/Target1.gd" type="Script" id=10]
+[ext_resource path="res://level/fin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://node/target/Target.tscn" type="PackedScene" id=12]
+[ext_resource path="res://level/2/tar2.png" type="Texture" id=13]
+[ext_resource path="res://level/2/tar1.png" type="Texture" id=14]
+[ext_resource path="res://level/1/level1.gd" type="Script" id=15]
+[ext_resource path="res://node/tips3.gd" type="Script" id=16]
+[ext_resource path="res://resoure/UI/A_E/a_e1.png" type="Texture" id=17]
+[ext_resource path="res://node/tips0444.gd" type="Script" id=18]
+
+[node name="level2" type="Node2D"]
+script = ExtResource( 15 )
+
+[node name="level_base" parent="." instance=ExtResource( 1 )]
+tool_num = 1
+agin = "res://level/2/level2.tscn"
+level = 2
+
+[node name="node" parent="." instance=ExtResource( 4 )]
+position = Vector2( 448, 320 )
+can_mouse = true
+num = 1
+
+[node name="star_end" parent="." instance=ExtResource( 3 )]
+position = Vector2( 455.55, 445.932 )
+rotation = -0.53924
+scale = Vector2( 1, 1.04321 )
+
+[node name="star_end2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 564, 445 )
+rotation = 0.604052
+scale = Vector2( 1.04605, 1.04339 )
+flip_h = true
+
+[node name="end" parent="." instance=ExtResource( 5 )]
+position = Vector2( 512, 320 )
+
+[node name="AE1" type="Sprite" parent="."]
+position = Vector2( 544, 351 )
+texture = ExtResource( 17 )
+
+[node name="Target" parent="." instance=ExtResource( 12 )]
+script = ExtResource( 10 )
+
+[node name="Target1" type="Sprite" parent="Target"]
+position = Vector2( 64, 64 )
+texture = ExtResource( 14 )
+
+[node name="fin" parent="Target/Target1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 48, 0 )
+
+[node name="Target2" type="Sprite" parent="Target"]
+position = Vector2( 64, 96 )
+texture = ExtResource( 13 )
+
+[node name="fin" parent="Target/Target2" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 48, 0 )
+
+[node name="tips4" parent="." instance=ExtResource( 6 )]
+margin_left = 173.0
+margin_top = 64.0
+margin_right = 292.0
+margin_bottom = 87.0
+text = "这里是你的目标"
+script = ExtResource( 8 )
+
+[node name="arrow" parent="tips4" instance=ExtResource( 7 )]
+visible = true
+position = Vector2( -16, 8 )
+rotation = 3.08974
+
+[node name="tips" parent="." instance=ExtResource( 6 )]
+margin_left = 921.0
+margin_top = 145.0
+margin_right = 1040.0
+margin_bottom = 168.0
+script = ExtResource( 18 )
+
+[node name="arrow" parent="tips" instance=ExtResource( 7 )]
+visible = true
+position = Vector2( 140, 11 )
+
+[node name="tips2" parent="." instance=ExtResource( 6 )]
+visible = false
+margin_left = 464.0
+margin_top = 254.0
+margin_right = 583.0
+margin_bottom = 277.0
+text = "放置在这里！"
+script = ExtResource( 9 )
+
+[node name="arrow" parent="tips2" instance=ExtResource( 7 )]
+visible = true
+position = Vector2( 44, 41 )
+rotation = 1.49701
+
+[node name="tips3" parent="." instance=ExtResource( 6 )]
+visible = false
+margin_left = 314.0
+margin_top = 336.0
+margin_right = 433.0
+margin_bottom = 359.0
+text = "点击初始球！"
+script = ExtResource( 16 )
+
+[node name="arrow" parent="tips3" instance=ExtResource( 7 )]
+visible = true
+position = Vector2( 110, 14 )
+
+[node name="Transition" parent="." instance=ExtResource( 2 )]
+string = "【传递】"
+string2 = "\"简单的传递，球们渴望传递\""
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 128.0
+margin_right = 1056.0
+margin_bottom = 640.0
+color = Color( 1, 1, 1, 0 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Reflexive_Main.ogg-786708dc8f71df44a1207644497e9bcc.oggstr"
+
+[deps]
+
+source_file="res://music/Reflexive_Main.ogg"
+dest_files=[ "res://.import/Reflexive_Main.ogg-786708dc8f71df44a1207644497e9bcc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

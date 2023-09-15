@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://level/3/AE1.gd" type="Script" id=1]
+[ext_resource path="res://resoure/UI/A_E/A_e.tres" type="Texture" id=2]
+
+[node name="AE1" type="Sprite"]
+position = Vector2( 480, 413 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )

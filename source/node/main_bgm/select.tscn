@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://music/menu_047.wav" type="AudioStream" id=1]
+[ext_resource path="res://node/main_bgm/select.gd" type="Script" id=2]
+
+[node name="select" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -15.731
+script = ExtResource( 2 )

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://node/next/next.gd" type="Script" id=1]
+[ext_resource path="res://resoure/UI/next/next.tres" type="Texture" id=2]
+[ext_resource path="res://node/arrow.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 64, 24 )
+
+[node name="next" type="Sprite"]
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+agin = "res://node/select_menu/select_menu.tscn"
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -8 )
+shape = SubResource( 1 )
+
+[node name="arrow" parent="." instance=ExtResource( 3 )]
+visible = true
+position = Vector2( 80, 0 )
+rotation = -3.13761
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

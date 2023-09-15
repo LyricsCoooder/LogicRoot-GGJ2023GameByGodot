@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://node/map/map.tscn" type="PackedScene" id=1]
+[ext_resource path="res://node/UI/return.tscn" type="PackedScene" id=2]
+[ext_resource path="res://level/Level_ui.tscn" type="PackedScene" id=3]
+[ext_resource path="res://resoure/root/root_len.tres" type="Texture" id=4]
+[ext_resource path="res://resoure/root/root.tres" type="Texture" id=5]
+[ext_resource path="res://node/select_menu/level_conctrl.gd" type="Script" id=6]
+
+[node name="select_menu" type="Node2D"]
+
+[node name="map" parent="." instance=ExtResource( 1 )]
+
+[node name="return" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1120, 32 )
+
+[node name="root" type="Sprite" parent="."]
+position = Vector2( 421, 157 )
+rotation = -0.627884
+texture = ExtResource( 5 )
+
+[node name="root5" type="Sprite" parent="root"]
+position = Vector2( 98.195, 370.312 )
+rotation = -1.55692
+texture = ExtResource( 5 )
+
+[node name="root4" type="Sprite" parent="root"]
+position = Vector2( -14.8565, 316.671 )
+rotation = 2.24457
+texture = ExtResource( 5 )
+
+[node name="root_len2" type="Sprite" parent="root"]
+position = Vector2( 48.9964, 114.649 )
+rotation = 0.627884
+texture = ExtResource( 4 )
+
+[node name="root_len3" type="Sprite" parent="root"]
+position = Vector2( 60.7787, 215.877 )
+rotation = 2.13925
+texture = ExtResource( 4 )
+
+[node name="root_len3" type="Sprite" parent="root/root_len3"]
+position = Vector2( 108.089, -233.993 )
+rotation = 2.13925
+texture = ExtResource( 4 )
+
+[node name="level_conctrl" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="Level_ui" parent="level_conctrl" instance=ExtResource( 3 )]
+position = Vector2( 390, 99 )
+path = "res://level/1/level1.tscn"
+open = true
+num = 1
+
+[node name="Level_ui2" parent="level_conctrl" instance=ExtResource( 3 )]
+position = Vector2( 362, 201 )
+path = "res://level/2/level2.tscn"
+num = 2
+
+[node name="Level_ui3" parent="level_conctrl" instance=ExtResource( 3 )]
+position = Vector2( 459, 219 )
+path = "res://level/3/level3.tscn"
+num = 3
+
+[node name="Level_ui4" parent="level_conctrl" instance=ExtResource( 3 )]
+position = Vector2( 593, 225 )
+path = "res://level/4/4.tscn"
+num = 4
+
+[node name="Level_ui5" parent="level_conctrl" instance=ExtResource( 3 )]
+position = Vector2( 601, 357 )
+rotation = -0.0425229
+path = "res://level/5/level5.tscn"
+num = 5
+
+[node name="Level_ui6" parent="level_conctrl" instance=ExtResource( 3 )]
+position = Vector2( 524, 415 )
+path = "res://level/6/level6.tscn"
+num = 6
+
+[node name="Level_ui7" parent="level_conctrl" instance=ExtResource( 3 )]
+position = Vector2( 665, 433 )
+path = "res://level/7/level7.tscn"
+num = 7
+
+[node name="Level_ui8" parent="level_conctrl" instance=ExtResource( 3 )]
+position = Vector2( 757, 451 )
+path = "res://level/8/level8.tscn"
+num = 8
+
+[node name="Level_ui9" parent="level_conctrl" instance=ExtResource( 3 )]
+position = Vector2( 781, 358 )
+path = "res://level/10/level10.tscn"
+num = 9
+
+[node name="Level_ui10" parent="level_conctrl" instance=ExtResource( 3 )]
+position = Vector2( 893, 420 )
+path = "res://level/9/level9.tscn"
+num = 10
